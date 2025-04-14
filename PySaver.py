@@ -1,8 +1,14 @@
 import datetime
-import pygame
 import sys
-from pygame.locals import *
+import os
 import time
+
+# to see if the user has pygame
+try:
+    import pygame
+    from pygame.locals import *
+except ImportError as e:
+    raise Exception("Pygame is not installed! Please run the following: pip install pygame")
 
 pygame.init()
 
@@ -22,7 +28,7 @@ screen_width, screen_height = screen.get_size() # propper image sizing
 
 title = pygame.display.set_caption("PySaver") # Title of app
 
-image = pygame.image.load(f"Images/{image_name}")
+image = pygame.image.load(f"{os.path.dirname(os.path.realpath(__file__))}/Images/{image_name}")
 image = pygame.transform.scale(image, (screen_width, screen_height))
 
 font = pygame.font.SysFont("segoeui", 85) # set this to whatever font you want it to be

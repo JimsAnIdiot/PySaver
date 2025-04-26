@@ -2,13 +2,16 @@ import datetime
 import sys
 import os
 import time
+import pygame
+from pygame.locals import *
 
 # to see if the user has pygame
-try:
-    import pygame
-    from pygame.locals import *
-except ImportError as e:
-    raise Exception("Pygame is not installed! Please run the following: pip install pygame")
+#try:
+#    import pygame
+#    from pygame.locals import *
+#except ImportError as e:
+#    raise Exception("Pygame is not installed! Please run the following: pip install pygame")
+# above is fucking shit, it can go fuck itself.
 
 pygame.init()
 
